@@ -11,6 +11,8 @@ module NavigationHelpers
   # step definition in web_steps.rb
   #
   def path_to(page_name)
+    #puts "==================="
+    puts page_name
     case page_name
 
     when /^the (RottenPotatoes )?home\s?page$/ then '/movies'
@@ -20,7 +22,22 @@ module NavigationHelpers
     #
     #   when /^(.*)'s profile page$/i
     #     user_profile_path(User.find_by_login($1))
-
+    when /^the edit page for "(.*)"/i
+      movie = Movie.where(["title = ?", $1]).first
+      movie_id = movie[:id]
+      edit_movie_path(movie_id)
+      
+    when /^the details page for "(.*)"$/i
+      movie = Movie.where(["title = ?", $1]).first
+      movie_id = movie[:id]
+      movie_path(movie_id)
+      
+    when /^the Similar Movies page for "(.*)"$/i
+      movie = Movie.where(["title = ?", $1]).first
+      #puts "=========="
+      #puts movie
+      similar_movies_path(movie)
+      
     else
       begin
         page_name =~ /^the (.*) page$/
