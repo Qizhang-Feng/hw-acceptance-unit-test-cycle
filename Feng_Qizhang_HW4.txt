@@ -1,0 +1,3 @@
+https://github.com/Qizhang-Feng/hw-acceptance-unit-test-cycle
+https://github.com/Qizhang-Feng/hw-acceptance-unit-test-cycle/blob/master/rottenpotatoes/cucumber.log
+https://github.com/Qizhang-Feng/hw-acceptance-unit-test-cycle/blob/master/rottenpotatoes/rspec.log
